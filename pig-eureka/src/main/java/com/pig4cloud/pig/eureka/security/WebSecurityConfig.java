@@ -31,6 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	@SneakyThrows
 	protected void configure(HttpSecurity http) {
+		//配置会以ResourceServerConfigurerAdapter为准
 		http.csrf().disable()
 			.authorizeRequests()
 			.antMatchers("/actuator/**").permitAll()
